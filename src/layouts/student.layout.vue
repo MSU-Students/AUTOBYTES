@@ -11,8 +11,8 @@
 </template>
 
 <script>
-const Header = () => import("./student/header.layout.vue");
-const Drawer = () => import("./student/drawer.layout.vue");
+const Header = () => import("../components/layout-component/header.layout.vue");
+const Drawer = () => import("../components/layout-component/drawer.layout.vue");
 
 export default {
   name: "StudentLayout",
