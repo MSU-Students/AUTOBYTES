@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    Home
+    <div class="text-h5 text-grey-10">Hello, Atiya Usman!</div>
   </q-page>
 </template>
 
