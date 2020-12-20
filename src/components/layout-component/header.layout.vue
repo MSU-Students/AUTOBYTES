@@ -9,8 +9,8 @@
         color="primary"
         @click="leftDrawerState = !leftDrawerState"
       />
-      <q-avatar class="q-pl-sm" size="40px" square>
-        <q-img src="~assets/citlogo.png"></q-img>
+      <q-avatar class="q-pl-sm" size="35px" square>
+        <q-img src="~assets/citlogo1.png"></q-img>
       </q-avatar>
 
       <q-space />
