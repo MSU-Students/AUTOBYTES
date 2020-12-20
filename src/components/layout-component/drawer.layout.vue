@@ -1,7 +1,7 @@
 <template>
   <q-drawer
     show-if-above
-    v-model="left"
+    v-model="leftDrawerState"
     side="left"
     content-class="bg-primary text-white"
   >
@@ -46,7 +46,7 @@ const itemList = [
   {
     icon: "assignment_turned_in",
     label: "Clearance",
-    to: "#",
+    to: "#"
   },
   {
     icon: "assignment_ind",
@@ -57,15 +57,28 @@ const itemList = [
     icon: "person",
     label: "Profile",
     to: "#"
-  },
+  }
 ];
 export default {
   name: "DrawerLayout",
+
   data() {
     return {
       left: false,
       menus: itemList
     };
+  },
+
+  computed: {
+    leftDrawerState: {
+      get() {
+        return this.$store.state.siteNav.leftDrawerState;
+      },
+      set(val) {
+        console.log(val);
+        this.$store.dispatch("siteNav/leftDrawerState", val);
+      }
+    }
   }
 };
 </script>
