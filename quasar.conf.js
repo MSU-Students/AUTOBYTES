@@ -20,7 +20,7 @@ module.exports = function (/* ctx */) {
     boot: [
       
       'axios',
-    ],
+  ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
@@ -92,7 +92,9 @@ module.exports = function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Loading'
+      ]
     },
 
     // animations: 'all', // --- includes all animations

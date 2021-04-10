@@ -46,17 +46,17 @@ const itemList = [
   {
     icon: "assignment_turned_in",
     label: "Clearance",
-    to: "#"
+    to: "/s/clearance"
   },
   {
     icon: "assignment_ind",
     label: "Attendance",
-    to: "#"
+    to: "/s/attendance"
   },
   {
     icon: "person",
     label: "Profile",
-    to: "#"
+    to: "/s/profile"
   }
 ];
 export default {
