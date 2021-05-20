@@ -6,7 +6,7 @@ const routes = [
   },
   {
     path: "/s/",
-    component: () => import("layouts/student.layout.vue"),
+    component: () => import("layouts/student/student.layout.vue"),
     children: [
       { path: "home", component: () => import("pages/student/home.page.vue") }
     ]
