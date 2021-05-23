@@ -79,9 +79,9 @@
 <script>
 const itemList = [
   {
-    icon: "home",
-    label: "Home",
-    to: "/s/home"
+    icon: "event",
+    label: "Bulletin",
+    to: "/s/bulletin"
   },
   {
     icon: "assignment_turned_in",
