@@ -1,7 +1,5 @@
 <template>
-  <q-page padding>
-      Clearance
-  </q-page>
+  
 </template>
 
 <script>

@@ -40,6 +40,67 @@ var routes = [{
         return _interopRequireWildcard(require("src/pages/student/bulletin.page.vue"));
       });
     }
+  }, {
+    path: "clearance",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("src/pages/student/clearance.page.vue"));
+      });
+    }
+  }, {
+    path: "profile",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("src/pages/student/profile.page.vue"));
+      });
+    }
+  }]
+}, {
+  path: "/a/",
+  name: "admin",
+  component: function component() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require("../layouts/admin/admin.layout.vue"));
+    });
+  },
+  meta: {
+    isAdmin: true
+  },
+  children: [{
+    path: "accounts",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/admin/accounts.page.vue"));
+      });
+    }
+  }, {
+    path: "attendance",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/admin/attendance.page.vue"));
+      });
+    }
+  }, {
+    path: "bulletin",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/admin/bulletin.page.vue"));
+      });
+    }
+  }, {
+    path: "clearances",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/admin/clearances.page.vue"));
+      });
+    }
+  }, {
+    path: "records",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/admin/records.page.vue"));
+      });
+    }
   }]
 }, // Always leave this as last one,
 // but you can also remove it

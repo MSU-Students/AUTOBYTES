@@ -39,13 +39,13 @@
         exact-active-class="text-white bg-primary"
         clickable
         v-ripple
-        style="border-radius: 50px 0px 50px 0px"
+        style="border-radius: 35px 0px 50px 0px"
       >
         <q-item-section avatar>
           <q-icon :name="menu.icon" />
         </q-item-section>
 
-        <q-item-section class="text-weight-light">
+        <q-item-section class="text-weight-regular">
           {{ menu.label }}
         </q-item-section>
       </q-item>
@@ -86,7 +86,7 @@ const itemList = [
   {
     icon: "assignment_turned_in",
     label: "Clearance",
-    to: "/s/liabilites"
+    to: "/s/clearance"
   },
   {
     icon: "person",
