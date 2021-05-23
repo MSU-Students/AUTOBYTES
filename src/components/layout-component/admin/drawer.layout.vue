@@ -39,7 +39,7 @@
 <script>
 const itemList = [
   {
-    icon: "home",
+    icon: "event_in",
     label: "Bulletin",
     to: "/a/home"
   },

@@ -34,10 +34,10 @@ var routes = [{
     });
   },
   children: [{
-    path: "home",
+    path: "bulletin",
     component: function component() {
       return Promise.resolve().then(function () {
-        return _interopRequireWildcard(require("pages/student/home.page.vue"));
+        return _interopRequireWildcard(require("src/pages/student/bulletin.page.vue"));
       });
     }
   }]
