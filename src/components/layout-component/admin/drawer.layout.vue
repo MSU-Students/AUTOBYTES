@@ -3,64 +3,104 @@
     show-if-above
     v-model="leftDrawerState"
     side="left"
-    content-class="bg-primary text-white"
+    content-class="bg-white text-primary"
+    bordered
+    dense
+    flat
+    round
   >
+  <!-- BYTES LOGO -->
     <div class="text-center q-pt-xl">
-      <q-chip size="18px" icon="school" color="white" text-color="primary">
-        AutoBytes
+      <div>
+        <q-avatar size="80px" style="border-radius: 10px 10px 10px 10px">
+          <img src="~assets/MSUBYTES.jpg" />
+        </q-avatar>
+      </div>
+      <q-chip
+        size="35px"
+        text-color="primary"
+        class="bg-transparent text-weight-bolder"
+      >
+        AUTOBYTES
       </q-chip>
     </div>
+    <!-- DRAWER LIST -->
     <q-list
       padding
-      class="menu-list q-pt-xl text-h6 text-weight-regular q-gutter-md"
+      class="menu-list q-pt-xl text-h5 text-weight-bold q-gutter-lg q-pb-xl"
     >
       <q-item
         v-for="(menu, index) in menus"
         :key="index"
         :to="menu.to"
-        class="q-mr-md text-white"
-        exact-active-class="text-white bg-blue-4"
+        :color="menu.to == $route.fullPath ? 'primary' : 'white'"
+        :text-color="menu.to == $route.fullPath ? 'white' : 'primary'"
+        :icon="menu.icon"
+        exact-active-class="text-white bg-primary"
         clickable
         v-ripple
-        style="border-radius: 0px 50px 50px 0px"
+        style="border-radius: 0px 45px 0px 40px"
       >
         <q-item-section avatar>
           <q-icon :name="menu.icon" />
         </q-item-section>
 
-        <q-item-section class="text-weight-light">
+        <q-item-section class="text-weight-regular">
           {{ menu.label }}
         </q-item-section>
       </q-item>
     </q-list>
+     <!-- PROFILE PIC -->
+    <div class="text-center q-pt-xl">
+      <q-btn round style="border-radius: 10px 10px 10px 10px">
+        <q-avatar size="80px" style="border-radius: 10px 10px 10px 10px">
+          <img src="~assets/Yass.jpg" />
+        </q-avatar>
+      </q-btn>
+      <div
+        class="q-pt-md text-subtitle2 text-grey-8 text-weight-bolder q-mx-md"
+      >
+        Mohammad Yassier Bashier
+      </div>
+    </div>
+    <!-- LOGOUT BUTTON -->
+    <div class="text-center q-pt-xl">
+      <q-btn
+        class="text-blue"
+        color="white"
+        icon="power_settings_new"
+        label="Logout"
+        to="/login"
+      />
+    </div>
   </q-drawer>
 </template>
 
 <script>
 const itemList = [
   {
-    icon: "event_in",
+    icon: "event",
     label: "Bulletin",
-    to: "/a/home"
+    to: "/a/bulletin"
   },
   {
     icon: "assignment_turned_in",
     label: "Clearance",
-    to: "#"
+    to: "/a/clearances"
   },
   {
     icon: "assignment_ind",
     label: "Attendance",
-    to: "#"
+    to: "/a/attendance"
   },
   {
     icon: "person",
-    label: "Profile",
-    to: "#"
+    label: "Records",
+    to: "/a/records"
   }
 ];
 export default {
-  name: "DrawerLayout",
+  name: "StudentDrawerLayout",
 
   data() {
     return {
