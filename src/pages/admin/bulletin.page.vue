@@ -2,46 +2,98 @@
   <q-page padding>
     <div class="q-pa-xs">
       <q-table
+        style="height: 750px"
         :data="data"
         :columns="columns"
         row-key="name"
         :filter="filter"
+        virtual-scroll
+        :pagination.sync="pagination"
+        :rows-per-page-options="[0]"
       >
         <template v-slot:header="props">
           <q-tr :props="props">
+            <q-th auto-width />
             <q-th v-for="col in props.cols" :key="col.name" :props="props">
               {{ col.label }}
             </q-th>
-            <q-th auto-width />
           </q-tr>
         </template>
 
-        <te
         <template v-slot:top="props">
-          <div class="col-2 q-table__title"> BULLETIN </div>
-            <q-select
-              v-model="multiple"
-              multiple
-              :options="options"
-              label="TYPE"
-              style="width: 250px"
-            />
-          <q-space />
-          <q-input
-            borderless
-            dense
-            debounce="300"
-            v-model="filter"
-            placeholder="Search"
-          >
-            <template v-slot:append>
-              <q-icon name="search" />
-            </template>
-          </q-input>
-          <q-space />
-          <q-btn color="primary" icon="check" label="OK" @click="onClick" />
-          <q-space />
-          <q-btn color="primary" icon="check" label="OK" @click="onClick" />
+          <div class="col q-table__title q-mr-lg">BULLETIN</div>
+          <div class="row q-gutter-sm q-mb-md">
+            <div>
+              <q-select
+                class="q-mr-md"
+                v-model="multiple"
+                multiple
+                :options="options"
+                label="Bulletin Type"
+                style="width: 200px"
+              />
+            </div>
+
+            <div class="q-search">
+              <q-input
+                outlined
+                dense
+                debounce="300"
+                v-model="filter"
+                placeholder="Search"
+                style="width: 200px"
+              >
+                <template v-slot:append>
+                  <q-icon name="search" />
+                </template>
+              </q-input>
+            </div>
+
+            <div>
+              <q-btn
+                class="q-mr-md"
+                color="primary"
+                icon="event"
+                label="ADD EVENT"
+              />
+            </div>
+          </div>
+        </template>
+
+        <template v-slot:body="props">
+          <q-tr :props="props">
+            <q-td auto-width>
+              <q-btn
+                size="sm"
+                color="primary"
+                round
+                @click="props.expand = !props.expand"
+                :icon="props.expand ? 'remove' : 'add'"
+              />
+            </q-td>
+            <q-td v-for="col in props.cols" :key="col.name" :props="props">
+              {{ col.value }}
+            </q-td>
+          </q-tr>
+          <q-tr v-show="props.expand" :props="props">
+            <q-td colspan="100%">
+              <div class="text-left text-subtitle1">
+                <p>Date: 05/12/2021 , 2nd Semester</p>
+                <p>FROM: OIPP</p>
+                <q-btn
+                  :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
+                  color="primary"
+                  label="View Picture"
+                />
+                <q-btn
+                  :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
+                  color="primary"
+                  label="Edit"
+                />
+                <q-btn color="primary" label="Archive" />
+              </div>
+            </q-td>
+          </q-tr>
         </template>
       </q-table>
     </div>
@@ -53,49 +105,59 @@ export default {
   data() {
     return {
       filter: "",
+      pagination: {
+        rowsPerPage: 0
+      },
       multiple: null,
-      options: ['1st Semester','2nd Semester', 'EVENTS', 'NEWS AND UPDATES', 'ACHIEVEMENTS'],
+      options: [
+        "1st Semester",
+        "2nd Semester",
+        "EVENTS",
+        "NEWS AND UPDATES",
+        "ACHIEVEMENTS"
+      ],
       columns: [
         {
           name: "title",
           required: true,
           label: "TITLE",
-          align: "left",
+          align: "center",
           field: row => row.name,
           format: val => `${val}`,
           sortable: true
         },
-        { name: "date", align: "center", label: "DATE", field: "date" },
-        { name: "semester", label: "SEMESTER", field: "semester" },
-        { name: "office", label: "OFFICE", field: "office" },
-        { name: "type", label: "TYPE", field: "type" }
+        { name: "type", label: "TYPE", field: "type", align: "center" }
       ],
       data: [
         {
-          name: "Frozen Yogurt",
-          date: 159,
-          semester: 6.0,
-          office: 24,
-          type: "Achievement"
+          name: "Sample 1",
+          type: "ACHIEVEMENTS"
         },
         {
-          name: "Frozen Yogurt2",
-          date: 159,
-          semester: 6.0,
-          office: "OIPP",
-          type: "Achievement"
+          name: "2",
+          type: "NEWS AND UPDATES"
         },
         {
-          name: "Frozen Yogurt3",
-          date: 159,
-          semester: 6.0,
-          office: 24,
-          type: "Achievement"
-        }
+          name: "3",
+          type: "EVENTS"
+        },
+        {
+          name: "4",
+          type: "ACHIEVEMENTS"
+        },
+        {
+          name: "5",
+          type: "NEWS AND UPDATES"
+        },
+        {
+          name: "6",
+          type: "EVENTS"
+        },
       ]
     };
   }
 };
 </script>
 
-<style lang="sass"></style>
+<style scoped>
+</style>
