@@ -51,11 +51,85 @@
 
             <div>
               <q-btn
-                class="q-mr-md"
                 color="primary"
-                icon="event"
+                icon-right="addevent"
                 label="ADD EVENT"
+                @click="dialog = true"
               />
+              <q-dialog v-model="dialog" persistent>
+                <q-card style="width: 500px">
+                  <q-card-section class="row items-center q-pb-none">
+                    <div class="text-h5">ADD</div>
+                    <q-space />
+                    <q-btn
+                      icon="close"
+                      flat
+                      round
+                      dense
+                      @click="dialog = false"
+                    />
+                  </q-card-section>
+                  <q-card-section>
+                    <div class="q-gutter-md" style="max-width: 500px">
+                      <q-input filled v-model="text" label="Title" />
+                      <q-input
+                        filled
+                        v-model="date"
+                        mask="date"
+                        :rules="['date']"
+                        label="Date"
+                      >
+                        <template v-slot:append>
+                          <q-icon name="event" class="cursor-pointer">
+                            <q-popup-proxy
+                              ref="qDateProxy"
+                              transition-show="scale"
+                              transition-hide="scale"
+                            >
+                              <q-date v-model="date">
+                                <div class="row items-center justify-end">
+                                  <q-btn
+                                    v-close-popup
+                                    label="Close"
+                                    color="primary"
+                                    flat
+                                  />
+                                </div>
+                              </q-date>
+                            </q-popup-proxy>
+                          </q-icon>
+                        </template>
+                      </q-input>
+                      <q-input filled v-model="text" label="From" />
+                      <q-select
+                        filled
+                        v-model="model"
+                        :options="semester"
+                        label="Semester"
+                      />
+                      <q-select
+                        filled
+                        v-model="models"
+                        :options="type"
+                        label="Bulletin Type"
+                      />
+                      <q-file filled v-model="file" label="Attach Image" :style="$q.screen.lt.md ? 'width: 295px' : 'width: 470px'">
+                        <template v-slot:prepend>
+                          <q-icon name="attach_file" />
+                        </template>
+                      </q-file>
+                    </div>
+                  </q-card-section>
+                  <q-card-section>
+                    <q-btn
+                      class="full-width"
+                      size="lg"
+                      color="primary"
+                      label="SAVE"
+                    />
+                  </q-card-section>
+                </q-card>
+              </q-dialog>
             </div>
           </div>
         </template>
@@ -104,6 +178,14 @@
 export default {
   data() {
     return {
+      file: null,
+      model: null,
+      models: null,
+      semester: ["1st Semester", "2nd Semester"],
+      type: ["EVENT", "NEWS AND UPDATES", "ACHIEVEMENTS"],
+      text: "",
+      date: "",
+      dialog: false,
       filter: "",
       pagination: {
         rowsPerPage: 0
@@ -152,12 +234,11 @@ export default {
         {
           name: "6",
           type: "EVENTS"
-        },
+        }
       ]
     };
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
