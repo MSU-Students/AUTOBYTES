@@ -71,7 +71,7 @@
                   </q-card-section>
                   <q-card-section>
                     <div class="q-gutter-md" style="max-width: 500px">
-                      <q-input filled v-model="text" label="Title" />
+                      <q-input filled v-model="title" label="Title" />
                       <q-input
                         filled
                         v-model="date"
@@ -100,7 +100,7 @@
                           </q-icon>
                         </template>
                       </q-input>
-                      <q-input filled v-model="text" label="Recorded By" />
+                      <q-input filled v-model="by" label="Recorded By" />
                       <q-select
                         filled
                         v-model="model"
@@ -157,7 +157,7 @@
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
                   color="primary"
-                  label="View Picture"
+                  label="View Image"
                 />
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
@@ -178,6 +178,8 @@
 export default {
   data() {
     return {
+      title: '',
+      by: '',
       file: null,
       model: null,
       models: null,

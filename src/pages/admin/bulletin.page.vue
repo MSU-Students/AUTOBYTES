@@ -60,7 +60,7 @@
                 <q-card style="width: 500px">
                   <q-card-section class="row items-center q-pb-none">
                     <div class="text-h5">ADD</div>
-                    <q-space />
+  
                     <q-btn
                       icon="close"
                       flat
@@ -71,7 +71,7 @@
                   </q-card-section>
                   <q-card-section>
                     <div class="q-gutter-md" style="max-width: 500px">
-                      <q-input filled v-model="text" label="Title" />
+                      <q-input filled v-model="title" label="Title" />
                       <q-input
                         filled
                         v-model="date"
@@ -100,7 +100,7 @@
                           </q-icon>
                         </template>
                       </q-input>
-                      <q-input filled v-model="text" label="From" />
+                      <q-input filled v-model="from" label="From" />
                       <q-select
                         filled
                         v-model="model"
@@ -157,7 +157,7 @@
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
                   color="primary"
-                  label="View Picture"
+                  label="View Imange"
                 />
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
@@ -178,6 +178,8 @@
 export default {
   data() {
     return {
+      title: '',
+      from: '',
       file: null,
       model: null,
       models: null,
