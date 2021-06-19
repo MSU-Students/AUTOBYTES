@@ -157,7 +157,7 @@
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
                   color="primary"
-                  label="View Imange"
+                  label="View Image"
                 />
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
