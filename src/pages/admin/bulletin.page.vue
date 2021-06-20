@@ -3,6 +3,7 @@
     <div class="q-pa-xs">
       <q-table
         style="height: 750px"
+        :grid="$q.screen.lt.md"
         :data="data"
         :columns="columns"
         row-key="name"
@@ -60,7 +61,7 @@
                 <q-card style="width: 500px">
                   <q-card-section class="row items-center q-pb-none">
                     <div class="text-h5">ADD</div>
-  
+                    <q-space />
                     <q-btn
                       icon="close"
                       flat

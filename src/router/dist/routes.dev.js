@@ -19,7 +19,7 @@ var routes = [{
     });
   },
   children: [{
-    path: "",
+    path: "login",
     component: function component() {
       return Promise.resolve().then(function () {
         return _interopRequireWildcard(require("pages/login.page.vue"));
