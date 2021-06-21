@@ -19,6 +19,13 @@ var routes = [{
     });
   },
   children: [{
+    path: "",
+    component: function component() {
+      return Promise.resolve().then(function () {
+        return _interopRequireWildcard(require("pages/landing.page.vue"));
+      });
+    }
+  }, {
     path: "login",
     component: function component() {
       return Promise.resolve().then(function () {

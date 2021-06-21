@@ -3,7 +3,7 @@
     <div class="q-pa-md">
       <q-table
         style="height: 400px"
-        title="Treats"
+        title="CLEARANCE"
         :data="data"
         :columns="columns"
         row-key="index"
