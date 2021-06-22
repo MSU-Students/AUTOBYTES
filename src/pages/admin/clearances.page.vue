@@ -21,7 +21,7 @@
         </template>
 
         <template v-slot:top="props">
-          <div class="col q-table__title q-mr-lg">RECORDS</div>
+          <div class="col q-table__title q-mr-lg">CLEARANCE</div>
           <div class="row q-gutter-sm q-mb-md">
             <div>
               <q-select
