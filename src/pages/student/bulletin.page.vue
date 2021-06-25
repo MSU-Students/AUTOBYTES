@@ -4,9 +4,9 @@
       <q-card>
         <q-tabs
           v-model="tab"
-          class="bg-primary text-white"
-          active-color="white"
-          indicator-color="white"
+          class="bg-white text-primary"
+          active-color="primary"
+          indicator-color="primary"
           align="justify"
           narrow-indicator
         >
