@@ -100,13 +100,48 @@
                           </q-icon>
                         </template>
                       </q-input>
-                      <q-input filled v-model="by" label="Added By" />
                       <q-select
                         filled
                         v-model="model"
                         :options="semester"
                         label="Semester"
                       />
+                      <q-input filled label="Fines" />
+                      <div class="q-gutter-sm">
+                        <q-checkbox
+                          size="sm"
+                          v-model="shape"
+                          val="doday"
+                          label="Do-Day"
+                        /><q-checkbox
+                          size="sm"
+                          v-model="shape"
+                          val="citparade"
+                          label="CIT Parade"
+                        />
+                        <q-checkbox
+                          size="sm"
+                          v-model="shape"
+                          val="others"
+                          label="Others"
+                        />
+                      </div>
+                      <q-input filled label="Fees" />
+                      <div>
+                        <q-checkbox
+                          size="sm"
+                          v-model="shape"
+                          val="bytesfee"
+                          label="Bytes Fees"
+                        />
+                        <q-checkbox
+                          size="sm"
+                          v-model="shape"
+                          val="violations"
+                          label="College Violations"
+                        />
+                      </div>
+                      <q-input filled v-model="by" label="Added By" />
                     </div>
                   </q-card-section>
                   <q-card-section>
@@ -141,10 +176,16 @@
           <q-tr v-show="props.expand" :props="props">
             <q-td colspan="100%">
               <div class="text-left text-subtitle1">
-                <p>Violations: Php 0</p>
-                <p>Fees : Php 550</p>
-                <p>Fines: Php 100</p>
-                <p>Signed By: Secretary</p>
+                <div>
+                  Fees: Php 500
+                  <li>Bytes Fee</li>
+                </div>
+                <div>
+                  Fines: Php 100
+                  <li>Do-Day</li>
+                  <li>CIT Parade</li>
+                </div>
+                <div>Signed By: Secretary</div>
                 <q-btn
                   :class="$q.screen.lt.md ? 'q-mr-md' : 'q-mr-xl'"
                   color="primary"
@@ -172,6 +213,7 @@ export default {
       date: "",
       dialog: false,
       filter: "",
+      shape: ["line"],
       pagination: {
         rowsPerPage: 0
       },
