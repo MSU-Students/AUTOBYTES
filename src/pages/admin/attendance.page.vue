@@ -2,15 +2,23 @@
   <q-page padding>
     <div class="q-pa-md">
       <q-table
-        style="height: 400px"
-        title="ATTENDANCE"
+        style="height: 750px"
+        :grid="$q.screen.lt.md"
         :data="data"
         :columns="columns"
         row-key="index"
+        :filter="filter"
         virtual-scroll
         :pagination.sync="pagination"
         :rows-per-page-options="[0]"
-      />
+      >
+        <template v-slot:top="props">
+          <div class="col q-table__title q-mr-lg">BULLETIN</div>
+          <div>
+            <q-btn color="primary" icon-right="addattachment" label="IMPORT DATA"/>
+          </div>
+        </template>
+      </q-table>
     </div>
   </q-page>
 </template>
@@ -19,6 +27,7 @@
 export default {
   data() {
     return {
+      files: null,
       pagination: {
         rowsPerPage: 0
       },

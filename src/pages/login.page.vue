@@ -37,7 +37,7 @@
             </q-input>
           </q-card-section>
           <q-card-actions class="q-mx-sm q-pt-md" align="center">
-            <q-btn class="full-width" label="Login" color="primary" size="lg" to="/s/bulletin" />
+            <q-btn class="full-width" label="Login" color="primary" size="lg" to="/a/bulletin" />
           </q-card-actions>
         </q-card>
       </div>

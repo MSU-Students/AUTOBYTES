@@ -4,6 +4,7 @@
       <q-card class="my-card1" bordered>
         <q-card-section>
           <div class="text-h5 text-center text-weight-medium">LIABILITIES</div>
+          <q-separator spaced inset />
         </q-card-section>
         <q-card-section class="q-pa-none">
           <q-scroll-area style="height: 500px;">
