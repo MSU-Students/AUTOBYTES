@@ -18,7 +18,7 @@
             <div class="text-h3 text-grey-10 text-weight-bold">AutoBytes</div>
           </q-card-section>
           <q-card-actions class="q-mx-sm q-pt-md" align="center">
-            <q-btn class="full-width" label="Login with Google" color="primary" size="lg" to="/a/bulletin" />
+            <q-btn class="full-width" label="Login with Google" color="primary" size="lg" to="/s/bulletin" />
           </q-card-actions>
         </q-card>
       </div>
