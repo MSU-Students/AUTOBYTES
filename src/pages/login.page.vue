@@ -16,28 +16,9 @@
           </q-card-section>
           <q-card-section class="text-center">
             <div class="text-h3 text-grey-10 text-weight-bold">AutoBytes</div>
-            <div class="text-h5 text-grey-7 text-weight-light q-pt-xl">
-              Log in to your account
-            </div>
-          </q-card-section> 
-          <q-card-section class="q-gutter-md">
-            <q-input filled label="ID Number" mask="#########">
-              <template v-slot:append>
-                <q-icon name="person" />
-              </template>
-            </q-input>
-            <q-input label="Password" v-model="password" filled :type="isPwd ? 'password' : 'text'" hint="Password with toggle">
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-              </template>
-            </q-input>
           </q-card-section>
           <q-card-actions class="q-mx-sm q-pt-md" align="center">
-            <q-btn class="full-width" label="Login" color="primary" size="lg" to="/a/bulletin" />
+            <q-btn class="full-width" label="Login with Google" color="primary" size="lg" to="/a/bulletin" />
           </q-card-actions>
         </q-card>
       </div>
