@@ -18,7 +18,14 @@
             <div class="text-h3 text-grey-10 text-weight-bold">AutoBytes</div>
           </q-card-section>
           <q-card-actions class="q-mx-sm q-pt-md" align="center">
-            <q-btn class="full-width" label="Login with Google" color="primary" size="lg" to="/s/bulletin" />
+            <q-btn
+              class="full-width"
+              label="Login with Google"
+              color="primary"
+              icon="google"
+              size="lg"
+              @click="googleLogin()"
+            />
           </q-card-actions>
         </q-card>
       </div>
@@ -30,11 +37,23 @@
 </template>
 
 <script>
+import loginService from "src/services/login.services.js";
 export default {
-  data () {
+  data() {
     return {
-      password: '',
-      isPwd: true,
+      password: "",
+      isPwd: true
+    };
+  },
+
+  created() {
+    loginService.onLoad();
+  },
+
+  methods: {
+    async googleLogin() {
+      const res = await loginService.signIn();
+      console.log(res);
     }
   }
 };
