@@ -3,21 +3,23 @@
     <div class="row q-pt-xl">
       <div class="col-6 q-pt-xs q-pr-xs ">
         <q-card style="height: 600px">
-          <div>
-            <q-parallax>
-              <template v-slot:media>
-                <img class="bg-img" src="~assets/citbldg.jpg" />
-              </template>
-              <h1 class="q-pt-xl">
-                <q-avatar size="200px">
-                  <img src="~assets/Yass.jpg" />
-                </q-avatar>
-              </h1>
-            </q-parallax>
+          <q-img
+            class="bg-img"
+            src="~assets/citbldg.jpg"
+            style="height: 600px"
+          />
+          <div class="absolute-full text-subtitle2 flex flex-center">
+            <q-avatar size="200px">
+              <img src="~assets/Yass.jpg" />
+            </q-avatar>
           </div>
+        </q-card>
+      </div>
+      <div class="col-6 q-pt-xs">
+        <q-card class="" style="height: 600px">
           <q-tabs
             v-model="tab"
-            class="text-primary q-pt-md full-width"
+            class="text-primary q-pt-xs full-width"
             narrow-indicator
             align="justify"
           >
@@ -25,10 +27,6 @@
             <q-tab name="prospectus" icon="article" label="Prospectus" />
             <q-tab name="qrcode" icon="qr_code" label="QR-Code" />
           </q-tabs>
-        </q-card>
-      </div>
-      <div class="col-6 q-pt-xl">
-        <q-card class="" style="height: 500px">
           <q-card-section>
             <q-tab-panels
               keep-alive
@@ -37,7 +35,8 @@
               @transition="showQrCode($event)"
             >
               <q-tab-panel name="info">
-                <div class="text-h6">Personal Information</div>
+                <div class="text-h6 text-center">Personal Information</div>
+                <q-separator spaced inset />
                 <q-list dense>
                   <q-item v-ripple>
                     <q-item-section>
@@ -60,14 +59,19 @@
               </q-tab-panel>
 
               <q-tab-panel name="prospectus">
-                <div class="text-h6">Prospectus</div>
+                <div class="text-h6 text-center">Prospectus</div>
+                <q-separator spaced inset />
                 Picture
+                <div>
+                  <q-btn class="q-mt-xl" color="primary" icon="file_download" label="Download" />
+                </div>
               </q-tab-panel>
 
               <q-tab-panel name="qrcode" class="text-center">
                 <div class="text-h4 text-weight-medium">
                   Qr Code
                 </div>
+                <q-separator spaced inset />
                 <canvas id="canvas"></canvas>
                 <div>
                   <q-btn
