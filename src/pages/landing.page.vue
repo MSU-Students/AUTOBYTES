@@ -109,7 +109,7 @@
       <div class="text-primary">
         <q-card class="q-ma-md shadow-10">
           <q-card-section>
-            <div class="text-h4 text-center text-weight-bolder">CIT</div>
+            <div class="font1 text-h4 text-center text-weight-bolder">CIT</div>
           </q-card-section>
           <q-card-section class="font1 text-h4 text-weight-bold text-center">
             MISSION
@@ -156,7 +156,7 @@
         <q-card
           class="text-h4 text-center text-primary text-weight-bolder q-ma-md shadow-10"
         >
-          <q-card-section>
+          <q-card-section class="font1">
             College of Information Technology Faculties
           </q-card-section>
           <q-card-section>
@@ -193,15 +193,15 @@
         <q-card class="q-ma-md shadow-10">
           <q-card-section>
             <div
-              class="text-primary q-pt-md text-h4 text-center text-weight-bolder"
+              class="font1 text-primary q-pt-md text-h4 text-center text-weight-bolder"
             >
               MEET THE MSU-BYTES OFFICERS
             </div>
             <div
               :class="
                 $q.screen.lt.md
-                  ? 'text-primary text-weight-regular'
-                  : 'row text-primary text-h6 text-weight-bolder'
+                  ? 'font2 text-primary text-weight-regular'
+                  : 'font2 row text-primary text-h6 text-weight-bolder'
               "
             >
               <div class="col-6">
@@ -292,8 +292,8 @@
                     <div
                       :class="
                         $q.screen.lt.md
-                          ? 'text-primary'
-                          : 'row text-primary text-weight-bolder text-h6'
+                          ? 'font2 text-primary'
+                          : 'font2 row text-primary text-weight-bolder text-h6'
                       "
                     >
                       <div class="col">
