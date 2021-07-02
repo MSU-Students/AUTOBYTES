@@ -109,7 +109,7 @@
       <div class="text-primary">
         <q-card class="q-ma-md shadow-10">
           <q-card-section>
-            <div class="font1 text-h4 text-center text-weight-bolder">CIT</div>
+            <div class="font3 text-h4 text-center text-weight-bolder">College of Information Technology</div>
           </q-card-section>
           <q-card-section class="font1 text-h4 text-weight-bold text-center">
             MISSION
