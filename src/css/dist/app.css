@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "custom_font";
+  src: url("../css/font/mont_reg.otf");
+  src: url("../css/font/nova_reg.otf");
+}
+.font1 {
+  font-family: "custom_font";
+}
+
+.font2 {
+  font-family: "custom_font", "nova_reg";
+}
