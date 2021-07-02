@@ -7,12 +7,12 @@
             <div
               :class="
                 $q.screen.lt.md
-                  ? 'text-center text-h2 text-primary text-weight-bolder q-mt-md'
-                  : 'text-left text-h2 text-primary text-weight-bolder q-pl-md q-pt-md'
+                  ? 'font3 text-center text-h2 text-primary text-weight-bolder q-mt-md'
+                  : 'font3 text-left text-h2 text-primary text-weight-bolder q-pl-md q-pt-md'
               "
             >
               <q-avatar rounded size="70px">
-                <img src="~assets/AUTOBYTES PICS/new/autobytes_logo3.png" />
+                <img src="~assets/autobytes_logo.png" />
               </q-avatar>
 
               AUTOBYTES
